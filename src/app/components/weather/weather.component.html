@@ -1,0 +1,10 @@
+<div>
+    <div *ngIf="show">
+        <h1 class="weather">
+            Temperature: {{weather.current.temp_c}} °C <img src="{{weather.current.condition.icon}}"/>
+        </h1>
+    </div>
+    <div *ngIf="!show">
+        <h1>Loading weather...</h1>
+    </div>
+</div>

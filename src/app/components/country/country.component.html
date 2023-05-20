@@ -1,0 +1,15 @@
+<div>
+    <h1>Choose Country</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label style="color: whitesmoke;">Country</mat-label>
+        <mat-select [(ngModel)]="selectedCountry" name="country" (selectionChange)="addCountryItem($event.value.name.common)">
+            <mat-option *ngFor="let option of filteredOptions| async" [value]="option">
+                {{option.name.common}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div *ngIf="selectedCountry.name !== undefined">
+        <h1>Country: {{selectedCountry.name.common}}</h1>
+        <img src="{{selectedCountry.flags.png}}"/>
+    </div>
+</div>

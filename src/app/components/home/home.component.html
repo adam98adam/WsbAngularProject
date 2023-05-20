@@ -1,0 +1,5 @@
+<div class="home">
+    <country (countryEvent)="setCountry($event)"/>
+    <capital *ngIf="country.length !== 0" [country]="country" (capitalEvent)="setCapital($event)" (showEvent)="setShowWeatherComponent($event)"/>
+    <weather *ngIf="showWeatherComponent" [city]="capital"/>
+</div>
