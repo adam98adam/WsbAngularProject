@@ -14,10 +14,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select'
+import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryComponent } from './components/country/country.component';
 import { CapitalComponent } from './components/capital/capital.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { LoginComponent } from './components/login/login.component';
+import { utils } from './class/utils/utils';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { WeatherComponent } from './components/weather/weather.component';
     CountryComponent,
     CapitalComponent,
     WeatherComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +45,10 @@ import { WeatherComponent } from './components/weather/weather.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [utils],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
