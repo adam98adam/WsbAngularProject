@@ -1,3 +1,4 @@
 <div class="information">
-    <h1>This application uses Weather Api to get access to actual weather data.</h1>
+    <button mat-button style="background-color: blueviolet;" (click)="fadeInOut()">Show/hide information</button>
+    <h1 [@fadeInOut]="show ? 'open' : 'close' ">This application uses Weather Api to get access to actual weather data.</h1>
 </div>
