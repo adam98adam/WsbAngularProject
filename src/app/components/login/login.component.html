@@ -42,7 +42,15 @@
                 <p *ngIf="password.errors?.['minlength']" style="color: red;">
                     Password must be at least 4 characters long.
                 </p>
-                <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+                <button mat-raised-button
+                        type="submit" 
+                        color="primary"
+                        [disabled]="
+                            username.errors?.['required'] ||
+                            username.errors?.['minlength'] ||
+                            password.errors?.['required'] ||
+                            password.errors?.['minlength']" 
+                        (click)="onSubmit()">Login</button>
             </form>
         </mat-card-content>
     </mat-card>
