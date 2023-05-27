@@ -1,5 +1,6 @@
 import {animate, state, style, transition, trigger } from '@angular/animations'
-import { Component } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
+import { utils } from 'src/app/class/utils/utils';
 
 const fadeInOut = trigger('fadeInOut', [
   state(
@@ -24,8 +25,14 @@ const fadeInOut = trigger('fadeInOut', [
   styleUrls: ['./information.component.css'],
   animations: [fadeInOut]
 })
-export class InformationComponent {
+export class InformationComponent implements OnInit {
   show: boolean = false;
+
+  constructor(private util: utils){}
+
+  ngOnInit(): void {
+    this.util.redirectToLoginPage()
+  }
 
   fadeInOut() {
     this.show = !this.show
